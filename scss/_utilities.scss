@@ -1,0 +1,39 @@
+$main-transition: 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+$secondary-transition: 0.25s ease-in-out;
+
+$yellow: #ffe745;
+$teal: #579b7a;
+$purple: #6046b6;
+
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1600px;
+
+// Tablet Screens
+@mixin md-screen {
+  @media only screen and (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+// Small Laptops
+@mixin lg-screen {
+  @media only screen and (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+// Large Laptops
+@mixin xl-screen {
+  @media only screen and (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+// Extra large computers
+@mixin xxl-screen {
+  @media only screen and (min-width: $breakpoint-xxl) {
+    @content;
+  }
+}
