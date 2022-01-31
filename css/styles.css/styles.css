@@ -1,1 +1,551 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Raleway:wght@300;400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #151515;
+}
+
+.header {
+  text-align: center;
+  margin: 0rem 2rem 4rem;
+}
+
+.header .title {
+  font-family: "Lora", serif;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 3.5px;
+}
+
+header {
+  width: 100%;
+  height: 75px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 100;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+header nav {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+header nav .logo-section {
+  height: 100%;
+  width: 100%;
+  padding-top: 0.42rem;
+}
+
+header nav .logo-section a {
+  height: 100%;
+  width: 100%;
+}
+
+header nav .logo-section a img {
+  width: 188px;
+  height: 56px;
+}
+
+header nav .menu-toggle {
+  padding: 20px;
+  cursor: pointer;
+}
+
+header nav .menu-toggle span {
+  height: 2px;
+  width: 30px;
+  background-color: #151515;
+  display: block;
+  position: relative;
+  margin: auto;
+  -webkit-transition: background-color 0.3s ease 0.3s;
+  transition: background-color 0.3s ease 0.3s;
+}
+
+header nav .menu-toggle span::before, header nav .menu-toggle span::after {
+  content: '';
+  height: 2px;
+  width: 30px;
+  background-color: #151515;
+  position: absolute;
+  left: 0;
+}
+
+header nav .menu-toggle span::before {
+  top: -10px;
+  -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease 0.3s;
+  transition: top 0.3s ease, -webkit-transform 0.3s ease 0.3s;
+  transition: top 0.3s ease, transform 0.3s ease 0.3s;
+  transition: top 0.3s ease, transform 0.3s ease 0.3s, -webkit-transform 0.3s ease 0.3s;
+}
+
+header nav .menu-toggle span::after {
+  bottom: -10px;
+  -webkit-transition: bottom 0.3s ease, -webkit-transform 0.3s ease 0.3s;
+  transition: bottom 0.3s ease, -webkit-transform 0.3s ease 0.3s;
+  transition: bottom 0.3s ease, transform 0.3s ease 0.3s;
+  transition: bottom 0.3s ease, transform 0.3s ease 0.3s, -webkit-transform 0.3s ease 0.3s;
+}
+
+header nav .menu-toggle.active span {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+header nav .menu-toggle.active span::before {
+  top: 0px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  opacity: 1;
+}
+
+header nav .menu-toggle.active span::after {
+  bottom: 0px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  opacity: 1;
+}
+
+header nav .navbar {
+  position: fixed;
+  top: 75px;
+  left: 0;
+  height: 100%;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f5f5f5;
+  list-style: none;
+  overflow-x: hidden;
+  -webkit-transform: translateX(-1000px);
+          transform: translateX(-1000px);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header nav .navbar.show {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+header nav .navbar-contact__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  padding: 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header nav .navbar-contact__info a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.72rem 0 0;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Lora", serif;
+  line-height: 26px;
+  letter-spacing: 1.2px;
+}
+
+header nav .navbar-contact__info a i {
+  margin-right: 1rem;
+  font-size: 20px;
+}
+
+header nav .navbar-contact__info .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0.72rem;
+}
+
+header nav .navbar-contact__info .socials a {
+  width: 39px;
+  height: 39px;
+  line-height: 29px;
+  font-size: 18px;
+  background: #ebebeb;
+  position: relative;
+  margin-right: 0.72rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header nav .navbar-contact__info .socials a:hover {
+  background: #6046b6;
+  color: #f5f5f5;
+}
+
+header nav .navbar-contact__info .socials a i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: inline-block;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+}
+
+header nav .navbar-links {
+  margin-top: 0.72rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  width: 100%;
+  height: 25%;
+}
+
+header nav .navbar-links--item {
+  width: 100%;
+}
+
+header nav .navbar-links--item__link {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+header nav .navbar-links--item__link:hover, header nav .navbar-links--item__link.active {
+  background-color: #6046b6;
+  color: #f5f5f5;
+}
+
+section#home {
+  width: 100%;
+  height: 60vh;
+  overflow-x: hidden;
+}
+
+section#home .carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+section#home .carousel-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transition: opacity 0.32s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: opacity 0.32s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+section#home .carousel-wrapper.off {
+  opacity: 0;
+  pointer-events: none;
+}
+
+section#home .carousel-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+}
+
+section#home .carousel-wrapper .carousel-page {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#home .carousel-wrapper .carousel-page__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  text-align: center;
+  color: #ececec;
+  padding: 15px;
+}
+
+section#home .carousel-wrapper .carousel-page__content h1 {
+  font-family: "Lora", serif;
+  font-size: 54px;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+}
+
+section#home .carousel-wrapper .carousel-page__content p {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30.5px;
+}
+
+section#home .carousel-wrapper .carousel-page__buttons {
+  width: 100%;
+  text-align: center;
+  padding: 15px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 4rem;
+}
+
+section#home .carousel-wrapper .carousel-page__buttons .primary-btn {
+  background-color: #ffe745;
+  color: #151515;
+  padding: 25px 40px;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  cursor: pointer;
+}
+
+section#home .carousel .pagers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 25%;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+section#home .carousel .pagers .carousel-slider {
+  display: block;
+  border: 2px solid #ffe745;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  cursor: pointer;
+  z-index: 11;
+}
+
+section#home .carousel .pagers .carousel-slider::before {
+  content: '';
+  display: block;
+  height: calc(30px * 0.25);
+  width: calc(30px * 0.25);
+  background-color: #ffe745;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+section#home .carousel .pagers .carousel-slider.active::before {
+  opacity: 1;
+}
+
+section#menu {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 4rem;
+}
+
+section#menu .menu-gallery {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: auto;
+  justify-items: center;
+}
+
+section#menu .menu-gallery__item {
+  position: relative;
+}
+
+section#menu .menu-gallery__item .overlay {
+  position: relative;
+  width: 370px;
+  height: 278px;
+}
+
+section#menu .menu-gallery__item .overlay img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+section#menu .menu-gallery__item .overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(20, 20, 20, 0.5);
+}
+
+section#menu .menu-gallery__item .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#menu .menu-gallery__item .wrapper::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -70%);
+          transform: translate(-50%, -70%);
+  background-color: #f5f5f5;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  opacity: 0.32;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+section#menu .menu-gallery__item .wrapper .icon {
+  color: #f5f5f5;
+  background-color: #6046b6;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+section#menu .menu-gallery__item .wrapper .icon i {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  font-size: 30px;
+}
+
+section#menu .menu-gallery__item .wrapper a {
+  color: white;
+  font-size: 24px;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+/*# sourceMappingURL=styles.css.map */

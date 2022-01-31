@@ -1,14 +1,23 @@
-$main-transition: 0.3s cubic-bezier(0.2, 1, 0.3, 1);
-$secondary-transition: 0.25s ease-in-out;
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+$main-transition: 0.72s cubic-bezier(0.2, 1, 0.3, 1);
+$secondary-transition: 0.3s ease;
+$normal-transition: 0.3s;
+$linear: 0.2s linear;
 
 $yellow: #ffe745;
 $teal: #579b7a;
 $purple: #6046b6;
+$black: #151515;
+$white: #f5f5f5;
 
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1600px;
+
+$lora: 'Lora', serif;
+$raleway: 'Raleway', sans-serif;
 
 // Tablet Screens
 @mixin md-screen {
@@ -36,4 +45,50 @@ $breakpoint-xxl: 1600px;
   @media only screen and (min-width: $breakpoint-xxl) {
     @content;
   }
+}
+
+@mixin primary-btn($bgColor, $px, $py) {
+  background-color: $bgColor;
+  color: $black;
+  padding: $px $py;
+  font-size: 20px;
+  font-family: $raleway;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  width: max-content;
+  cursor: pointer;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: $raleway;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.header {
+  text-align: center;
+  margin: 0rem 2rem 4rem;
+  // margin: 0rem 2rem 1rem;
+  // margin: 2rem 0rem;
+
+  .title {
+    font-family: $lora;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 3.5px;
+  }
+  // background-color: blue;
 }

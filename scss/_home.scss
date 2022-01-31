@@ -1,0 +1,125 @@
+section#home {
+  width: 100%;
+  height: 60vh;
+  overflow-x: hidden;
+
+  .carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      pointer-events: all;
+      transition: opacity 0.32s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+      &.off {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      .carousel-page {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__content {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+          color: #ececec;
+          padding: 15px;
+
+          h1 {
+            font-family: $lora;
+            font-size: 54px;
+            font-weight: 400;
+            margin-bottom: 1.6rem;
+          }
+
+          p {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 30.5px;
+          }
+        }
+
+        &__buttons {
+          width: 100%;
+          text-align: center;
+          padding: 15px 25px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 4rem;
+
+          .primary-btn {
+            @include primary-btn($yellow, 25px, 40px);
+          }
+        }
+      }
+    }
+
+    .pagers {
+      display: flex;
+      justify-content: space-between;
+      width: 25%;
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+
+      .carousel-slider {
+        display: block;
+        border: 2px solid $yellow;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        position: relative;
+        cursor: pointer;
+        z-index: 11;
+
+        &::before {
+          content: '';
+          display: block;
+          height: calc(30px * 0.25);
+          width: calc(30px * 0.25);
+          background-color: $yellow;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          opacity: 0;
+        }
+
+        &.active {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

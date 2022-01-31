@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza House Website</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link rel="stylesheet" href="./css/styles.css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="menu-toggle" id="toggleBtn">
+          <span></span>
+        </div>
+        <div class="logo-section">
+          <a href="#" class="brand">
+            <img src="./img/logo.png" width="198" height="66" alt="Pizza House" />
+          </a>
+        </div>
+
+        <ul class="navbar" id="sideBar">
+          <div class="navbar-contact__info">
+            <a href="#" class="cell">
+              <i class="fas fa-phone-alt"></i>
+              <span>+258 848903336</span>
+            </a>
+            <a href="#" class="locale">
+              <i class="fas fa-map-marker-alt"></i>
+              <span title="Not real, only for display purposes">514 S. Magnolia St. Orlando, FL 32806</span>
+            </a>
+            <div class="socials">
+              <a href="#" class="fc">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+              <a href="#" class="twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="insta">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="gmail">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+          <div class="navbar-links">
+            <li class="navbar-links--item">
+              <a href="#" class="navbar-links--item__link active">HOME</a>
+            </li>
+            <li class="navbar-links--item">
+              <a href="#" class="navbar-links--item__link">MENU</a>
+            </li>
+            <li class="navbar-links--item">
+              <a href="#" class="navbar-links--item__link">ABOUT US</a>
+            </li>
+            <li class="navbar-links--item">
+              <a href="#" class="navbar-links--item__link">CONTACT</a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home">
+      <div class="carousel">
+        <!-- Slide 1 -->
+        <div class="carousel-wrapper slide-1">
+          <img src="./img/slide-1.jpg" alt="" />
+          <div class="carousel-page">
+            <div class="carousel-page__content">
+              <h1>QUALITY INGREDIENTS</h1>
+              <p>We use only the best ingredients to make one-of-a-kind pizzas for our customers.</p>
+            </div>
+            <div class="carousel-page__buttons">
+              <a href="#" class="primary-btn">VIEW OUR MENU</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-wrapper slide-2 off">
+          <img src="./img/slide-2.jpg" alt="" />
+          <div class="carousel-page">
+            <div class="carousel-page__content">
+              <h1>PERFECT PIZZA</h1>
+              <p>Experience the taste of a perfect pizza at PizzaHouse, one of the best restaurants!</p>
+            </div>
+            <div class="carousel-page__buttons">
+              <a href="#" class="primary-btn">VIEW OUR MENU</a>
+            </div>
+          </div>
+        </div>
+        <div class="pagers">
+          <span class="carousel-slider active"></span>
+          <span class="carousel-slider"></span>
+        </div>
+      </div>
+    </section>
+    <section id="menu">
+      <div class="header">
+        <h1 class="title">OUR MENU</h1>
+      </div>
+
+      <div class="menu-gallery">
+        <div class="menu-gallery__item">
+          <div class="overlay">
+            <img src="./img/menu-1.jpg" alt="" />
+          </div>
+          <div class="wrapper">
+            <div class="icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <a href="#">Salads</a>
+          </div>
+        </div>
+        <div class="menu-gallery__item">
+          <div class="overlay">
+            <img src="./img/menu-2.jpg" alt="" />
+          </div>
+          <div class="wrapper">
+            <div class="icon">
+              <i class="fas fa-pizza-slice"></i>
+            </div>
+            <a href="#">Pizzas</a>
+          </div>
+        </div>
+        <div class="menu-gallery__item">
+          <div class="overlay">
+            <img src="./img/menu-3.jpg" alt="" />
+          </div>
+          <div class="wrapper">
+            <div class="icon">
+              <i class="fas fa-hamburger"></i>
+            </div>
+            <a href="#">Burgers</a>
+          </div>
+        </div>
+        <div class="menu-gallery__item">
+          <div class="overlay">
+            <img src="./img/menu-4.jpg" alt="" />
+          </div>
+          <div class="wrapper">
+            <div class="icon">
+              <i class="fas fa-ice-cream"></i>
+            </div>
+            <a href="#">Desserts</a>
+          </div>
+        </div>
+        <div class="menu-gallery__item">
+          <div class="overlay">
+            <img src="./img/menu-5.jpg" alt="" />
+          </div>
+          <div class="wrapper">
+            <div class="icon">
+              <i class="fas fa-mug-hot"></i>
+            </div>
+            <a href="#">Drinks</a>
+          </div>
+        </div>
+        <div class="menu-gallery__item">
+          <div class="overlay">
+            <img src="./img/menu-6.jpg" alt="" />
+          </div>
+          <div class="wrapper">
+            <div class="icon">
+              <i class="fas fa-fish"></i>
+            </div>
+            <a href="#">Seafood</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

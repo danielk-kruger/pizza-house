@@ -1,0 +1,201 @@
+header {
+  width: 100%;
+  height: 75px;
+  position: sticky;
+  z-index: 100;
+  background-color: #fff;
+  overflow: hidden;
+
+  nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    .logo-section {
+      height: 100%;
+      width: 100%;
+      padding-top: 0.42rem;
+
+      a {
+        height: 100%;
+        width: 100%;
+
+        img {
+          width: 188px;
+          height: 56px;
+        }
+      }
+    }
+
+    .menu-toggle {
+      padding: 20px;
+      cursor: pointer;
+
+      span {
+        height: 2px;
+        width: 30px;
+        background-color: #151515;
+        display: block;
+        position: relative;
+        margin: auto;
+        transition: background-color $secondary-transition 0.3s;
+
+        &::before,
+        &::after {
+          content: '';
+          height: 2px;
+          width: 30px;
+          background-color: #151515;
+          position: absolute;
+          left: 0;
+        }
+
+        &::before {
+          top: -10px;
+          transition: top $secondary-transition,
+            transform $secondary-transition 0.3s;
+        }
+
+        &::after {
+          bottom: -10px;
+          transition: bottom $secondary-transition,
+            transform $secondary-transition 0.3s;
+        }
+      }
+
+      &.active {
+        span {
+          background-color: rgba(0, 0, 0, 0);
+
+          &::before {
+            top: 0px;
+            transform: rotate(-45deg);
+            opacity: 1;
+          }
+
+          &::after {
+            bottom: 0px;
+            transform: rotate(45deg);
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .navbar {
+      position: fixed;
+      top: 75px;
+      left: 0;
+      height: 100%;
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background: $white;
+      list-style: none;
+      overflow-x: hidden;
+      transform: translateX(-1000px);
+      transition: $secondary-transition;
+
+      &.show {
+        transform: translateX(0px);
+      }
+
+      &-contact__info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 30px;
+        width: 100%;
+        margin: 0 auto;
+
+        a {
+          display: flex;
+          margin: 0.72rem 0 0;
+          text-align: left;
+          font-size: 16px;
+          font-weight: 600;
+          font-family: $lora;
+          line-height: 26px;
+          letter-spacing: 1.2px;
+
+          i {
+            margin-right: 1rem;
+            font-size: 20px;
+          }
+        }
+
+        .socials {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 0.72rem;
+          // text-align: center;
+
+          a {
+            width: 39px;
+            height: 39px;
+            line-height: 29px;
+            font-size: 18px;
+            background: #ebebeb;
+            position: relative;
+            margin-right: 0.72rem;
+            transition: $normal-transition;
+
+            &:hover {
+              background: $purple;
+              color: $white;
+            }
+
+            i {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              display: inline-block;
+              font-weight: 400;
+              font-style: normal;
+              text-transform: none;
+              // text-align: center;
+            }
+          }
+        }
+      }
+
+      &-links {
+        margin-top: 0.72rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: left;
+        width: 100%;
+        height: 25%;
+
+        &--item {
+          width: 100%;
+
+          &__link {
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 1rem;
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
+
+            &:hover,
+            &.active {
+              background-color: $purple;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
