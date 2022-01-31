@@ -81,15 +81,67 @@ a {
 
 .header {
   text-align: center;
-  margin: 0rem 2rem 4rem;
+  margin: 0 auto 3rem;
+  // margin: 0rem 2rem 4rem;
+  width: 100%;
   // margin: 0rem 2rem 1rem;
   // margin: 2rem 0rem;
 
   .title {
     font-family: $lora;
-    font-size: 38px;
+    font-size: 32px;
     font-weight: 400;
     letter-spacing: 3.5px;
   }
   // background-color: blue;
+}
+
+.badge {
+  // display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 2px 14px 3px 10px;
+  min-width: 76px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  z-index: 5;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+
+  &.sale {
+    color: black;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: $yellow;
+      z-index: -1;
+      transform: skew(-22deg);
+      transform-origin: 50% 0;
+      pointer-events: none;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $purple;
+    z-index: -1;
+    transform: skew(-22deg);
+    transform-origin: 50% 0;
+    pointer-events: none;
+  }
 }
