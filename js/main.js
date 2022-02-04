@@ -49,3 +49,28 @@ function handlePager() {
     });
   }
 }
+
+// JQUERY
+
+$(document).ready(function () {
+  $('.owl-carousel').owlCarousel({
+    center: true,
+    items: 1,
+    loop: true,
+    margin: 20,
+    dots: false,
+    nav: true,
+    autoplay: true,
+    autoplayTimeout: 8000,
+    autoplayHoverPause: true,
+    merge: true,
+    mouseDrag: false,
+    smartSpeed: 250,
+    navContainer: '.owl-nav',
+    navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
+  });
+
+  function isScrolledIntoView(elem) {
+    return elem.offset().top + elem.outerHeight() >= $window.scrollTop() && elem.offset().top <= $window.scrollTop() + $window.height();
+  }
+});
