@@ -6,6 +6,10 @@
   overflow: hidden;
   position: relative;
 
+  @include md-screen {
+    height: 503px;
+  }
+
   img {
     height: 100%;
     width: 100%;
@@ -31,29 +35,43 @@
     left: 0;
     right: 0;
     bottom: 0;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
     color: white;
     z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    padding: 30px 20px;
+    padding: 30px 20px 30px 40px;
+
+    @include md-screen {
+      justify-content: center;
+      text-align: left;
+      padding-left: 50%;
+      padding-right: 60px;
+    }
 
     .lead {
       font-family: $lora;
       font-weight: 400;
       font-size: 28px;
-      margin-bottom: 8px;
-      // line-height: 34.6px;
+      margin-bottom: 4px;
+      line-height: 34.6px;
+
+      @include md-screen {
+        font-size: 32px;
+        margin-bottom: 1.2rem;
+      }
     }
 
     p {
       font-weight: 500;
       font-size: 20px;
       line-height: 34.6px;
+
+      @include md-screen {
+        font-size: 24px;
+        margin-bottom: 1rem;
+      }
     }
 
     .author {
@@ -73,7 +91,7 @@
 
         &.purple {
           background-color: $purple;
-          margin-top: 10px;
+          // margin-top: 5px;
         }
       }
 
@@ -101,6 +119,7 @@
       color: white;
       font-weight: 400;
       font-size: 18px;
+      margin-top: 1rem;
       // display: block;
 
       &.yellow {

@@ -1,15 +1,24 @@
 section#menu {
   width: 100%;
   overflow: hidden;
-  margin-top: 4rem;
 
   .menu-gallery {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin: auto;
+    margin: 0;
     justify-items: center;
+    // margin: 2rem 0 0;
+    margin-top: 2rem;
+
+    @include md-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
 
     &__item {
       position: relative;
@@ -19,10 +28,14 @@ section#menu {
         width: 370px;
         height: 278px;
 
+        @include md-screen {
+          width: 335px;
+          height: 243px;
+        }
+
         img {
           height: 100%;
           width: 100%;
-          // aspect-ratio: auto 370 / 278px;
           object-fit: cover;
           object-position: center;
         }
@@ -62,7 +75,6 @@ section#menu {
           opacity: 0.32;
           backdrop-filter: blur(4px);
           -webkit-backdrop-filter: blur(4px);
-          // margin-bottom: 10px;
         }
 
         .icon {
@@ -74,7 +86,6 @@ section#menu {
           text-align: center;
           position: relative;
           z-index: 3;
-          // opacity: 1;
 
           i {
             transform: translateY(10px);
@@ -86,7 +97,6 @@ section#menu {
           color: white;
           font-size: 24px;
           transform: translateY(20px);
-          // margin-top: 2rem;
         }
       }
     }

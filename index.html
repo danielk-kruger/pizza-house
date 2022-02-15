@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/styles.css/styles.css" />
   </head>
   <body>
-    <header>
+    <header >
       <nav>
         <div class="menu-toggle" id="toggleBtn">
           <span></span>
@@ -50,16 +50,19 @@
           </div>
           <div class="navbar-links">
             <li class="navbar-links--item">
-              <a href="#" class="navbar-links--item__link active">HOME</a>
+              <a href="#home" class="navbar-links--item__link active">Home</a>
             </li>
             <li class="navbar-links--item">
-              <a href="#" class="navbar-links--item__link">MENU</a>
+              <a href="#menu" class="navbar-links--item__link">Menu</a>
             </li>
             <li class="navbar-links--item">
-              <a href="#" class="navbar-links--item__link">ABOUT US</a>
+              <a href="#products" class="navbar-links--item__link">Products</a>
             </li>
             <li class="navbar-links--item">
-              <a href="#" class="navbar-links--item__link">CONTACT</a>
+              <a href="#about" class="navbar-links--item__link">About Us</a>
+            </li>
+            <li class="navbar-links--item">
+              <a href="#contact" class="navbar-links--item__link">Contact</a>
             </li>
           </div>
         </ul>
@@ -95,11 +98,12 @@
           </div>
         </div>
         <div class="pagers">
-          <span class="carousel-slider active"></span>
-          <span class="carousel-slider"></span>
+          <span class="carousel-slider prev active"> </span>
+          <span class="carousel-slider next"></span>
         </div>
       </div>
     </section>
+    
     <section id="menu">
       <div class="header">
         <h1 class="title">OUR MENU</h1>
@@ -117,7 +121,7 @@
             <a href="#">Salads</a>
           </div>
         </div>
-        <div class="menu-gallery__item">
+        <div class="menu-gallery__item" id="enable-sticky-nav">
           <div class="overlay">
             <img src="./img/menu-2.jpg" alt="" />
           </div>
@@ -128,7 +132,7 @@
             <a href="#">Pizzas</a>
           </div>
         </div>
-        <div class="menu-gallery__item">
+        <div class="menu-gallery__item" >
           <div class="overlay">
             <img src="./img/menu-3.jpg" alt="" />
           </div>
@@ -175,7 +179,7 @@
       </div>
     </section>
 
-    <section class="banner">
+    <section class="banner add-mobile-sticky">
       <img src="./img/bg-3.jpg" alt="" />
       <div class="banner-overlay"></div>
       <div class="banner-content">

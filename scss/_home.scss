@@ -1,7 +1,17 @@
 section#home {
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   overflow-x: hidden;
+  padding-bottom: 4rem;
+  margin-bottom: 2rem;
+
+  @include md-screen {
+    height: 70vh;
+  }
+
+  @include lg-screen {
+    height: 90vh;
+  }
 
   .carousel {
     width: 100%;
@@ -49,17 +59,33 @@ section#home {
           color: #ececec;
           padding: 15px;
 
+          @include md-screen {
+            text-align: left;
+            padding-top: 70px;
+            padding-left: 30px;
+          }
+
           h1 {
             font-family: $lora;
             font-size: 54px;
             font-weight: 400;
             margin-bottom: 1.6rem;
+
+            @include md-screen {
+              width: 30%;
+              font-size: 72px;
+            }
           }
 
           p {
             font-size: 22px;
             font-weight: 600;
             line-height: 30.5px;
+
+            @include md-screen {
+              width: 60%;
+              font-size: 20px;
+            }
           }
         }
 
@@ -75,6 +101,15 @@ section#home {
 
           .primary-btn {
             @include primary-btn($yellow, 25px, 40px);
+
+            @include md-screen {
+              padding: 20px 35px;
+              font-size: 18px;
+            }
+          }
+
+          @include md-screen {
+            align-items: flex-start;
           }
         }
       }
@@ -89,7 +124,10 @@ section#home {
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
-      // padding-top: 0.32rem;
+
+      @include md-screen {
+        justify-content: space-evenly;
+      }
 
       .carousel-slider {
         display: block;
@@ -100,6 +138,18 @@ section#home {
         position: relative;
         cursor: pointer;
         z-index: 11;
+
+        @include md-screen {
+          height: 25px;
+          width: 25px;
+        }
+
+        @include lg-screen {
+          border: none;
+          height: fit-content;
+          width: fit-content;
+          // content: 'f061';
+        }
 
         &::before {
           content: '';
@@ -113,11 +163,25 @@ section#home {
           transform: translate(-50%, -50%);
           border-radius: 50%;
           opacity: 0;
+
+          @include md-screen {
+            height: calc(25px * 0.25);
+            width: calc(25px * 0.25);
+          }
+
+          @include lg-screen {
+            height: 0;
+            width: 0;
+          }
         }
 
         &.active {
           &::before {
             opacity: 1;
+
+            @include lg-screen {
+              opacity: 0;
+            }
           }
         }
       }

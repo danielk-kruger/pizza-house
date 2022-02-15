@@ -1,31 +1,156 @@
 header {
   width: 100%;
   height: 75px;
-  position: sticky;
+  position: relative;
   z-index: 100;
   background-color: #fff;
   overflow: hidden;
+  transition: all $linear;
+
+  @include lg-screen {
+    height: 125px;
+  }
+
+  @include xl-screen {
+    height: 150px;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    // height: 70px;
+
+    @include lg-screen {
+      // position: fixed;
+      height: calc(125px * 0.5);
+    }
+
+    nav {
+      .logo-section {
+        @include lg-screen {
+          width: 40%;
+          height: 100%;
+          margin: 0;
+          padding-top: 5rem;
+        }
+
+        a {
+          img {
+            @include lg-screen {
+              width: 164px;
+              height: 54px;
+              right: -20%;
+            }
+          }
+        }
+      }
+
+      .navbar {
+        &-contact__info {
+          @include lg-screen {
+            display: none;
+          }
+        }
+
+        &-links {
+          &--item {
+            &__link {
+              padding: 20px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
 
   nav {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     position: relative;
+
+    @include lg-screen {
+      padding: 0;
+      background-color: $white;
+    }
 
     .logo-section {
       height: 100%;
       width: 100%;
       padding-top: 0.42rem;
 
+      @include lg-screen {
+        padding-top: 1rem;
+        margin-bottom: 2rem;
+        width: 30%;
+        height: 90%;
+        background-color: #fff;
+        transform: translate(-2.72rem, 0%);
+        position: relative;
+      }
+
+      @include xl-screen {
+        width: 50%;
+        transform: translate(-5rem, 0%);
+      }
+
+      @include xxl-screen {
+        width: 60%;
+        transform: translate(-4rem, 0%);
+      }
+
+      &::before {
+        @include lg-screen {
+          content: '';
+          height: 100%;
+          width: 40px;
+          position: absolute;
+          background-color: white;
+          right: -30px;
+          top: 0;
+          bottom: 0;
+          transform: skew(15deg);
+        }
+
+        @include xl-screen {
+          width: 60px;
+        }
+      }
+
       a {
         height: 100%;
         width: 100%;
 
+        @include lg-screen {
+          position: relative;
+          display: inline-block;
+          text-align: right;
+        }
+
         img {
           width: 188px;
           height: 56px;
+
+          @include lg-screen {
+            position: absolute;
+            bottom: 0;
+            right: -42%;
+            transform: translate(-50%, -50%);
+          }
+
+          @include xl-screen {
+            width: 202px;
+            height: 66px;
+            right: -20%;
+          }
+
+          @include xxl-screen {
+            right: -10%;
+          }
         }
       }
     }
@@ -34,6 +159,10 @@ header {
       padding: 20px;
       cursor: pointer;
 
+      @include lg-screen {
+        display: none;
+      }
+
       span {
         height: 2px;
         width: 30px;
@@ -41,7 +170,7 @@ header {
         display: block;
         position: relative;
         margin: auto;
-        transition: background-color $secondary-transition 0.3s;
+        transition: background-color $linear 0.1s;
 
         &::before,
         &::after {
@@ -55,14 +184,12 @@ header {
 
         &::before {
           top: -10px;
-          transition: top $secondary-transition,
-            transform $secondary-transition 0.3s;
+          transition: top $linear, transform $secondary-transition 0.2s;
         }
 
         &::after {
           bottom: -10px;
-          transition: bottom $secondary-transition,
-            transform $secondary-transition 0.3s;
+          transition: bottom $linear, transform $secondary-transition 0.2s;
         }
       }
 
@@ -97,12 +224,27 @@ header {
       align-items: center;
       background: $white;
       list-style: none;
-      overflow-x: hidden;
+      overflow: hidden;
       transform: translateX(-1000px);
       transition: $secondary-transition;
 
       &.show {
         transform: translateX(0px);
+      }
+
+      @include md-screen {
+        width: 35%;
+      }
+
+      @include lg-screen {
+        width: 100%;
+        position: relative;
+        justify-content: space-between;
+        align-items: flex-end;
+        transform: translateX(0px);
+        top: 0;
+        right: 0;
+        overflow: visible;
       }
 
       &-contact__info {
@@ -112,20 +254,75 @@ header {
         padding: 30px;
         width: 100%;
         margin: 0 auto;
+        position: relative;
 
-        a {
+        @include lg-screen {
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          left: 0;
+          right: 0;
+          padding: 10px 0px;
+          z-index: -3;
+          height: max-content;
+          width: fit-content;
+          overflow: visible;
+        }
+
+        @include xl-screen {
+          width: fit-content;
+        }
+
+        &::before {
+          @include lg-screen {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: -5%;
+            right: 0px;
+            bottom: 0px;
+            background-color: white;
+            z-index: -1;
+            width: 1000%;
+            transform: translateX(-50%);
+            transform: skew(15deg);
+          }
+
+          @include xl-screen {
+            left: -12%;
+          }
+
+          @include xxl-screen {
+            left: -30%;
+          }
+        }
+
+        a.cell,
+        a.locale {
           display: flex;
           margin: 0.72rem 0 0;
           text-align: left;
-          font-size: 16px;
           font-weight: 600;
           font-family: $lora;
           line-height: 26px;
           letter-spacing: 1.2px;
 
+          @include lg-screen {
+            justify-content: space-between;
+            margin: 0;
+            padding-right: 2rem;
+            font-size: 14px;
+          }
+
           i {
             margin-right: 1rem;
-            font-size: 20px;
+            font-size: 14px;
+
+            @include lg-screen {
+              margin-right: 1.2rem;
+              margin-top: 0.2rem;
+              font-size: 16px;
+            }
           }
         }
 
@@ -134,7 +331,10 @@ header {
           justify-content: center;
           align-items: center;
           margin-top: 0.72rem;
-          // text-align: center;
+
+          @include lg-screen {
+            margin: 0;
+          }
 
           a {
             width: 39px;
@@ -151,6 +351,13 @@ header {
               color: $white;
             }
 
+            @include lg-screen {
+              font-size: 20px;
+              line-height: 0px;
+              width: 32px;
+              height: 32px;
+            }
+
             i {
               position: absolute;
               top: 50%;
@@ -160,7 +367,6 @@ header {
               font-weight: 400;
               font-style: normal;
               text-transform: none;
-              // text-align: center;
             }
           }
         }
@@ -176,8 +382,22 @@ header {
         width: 100%;
         height: 25%;
 
+        @include lg-screen {
+          flex-direction: row;
+          margin: 0 auto;
+          height: auto;
+          text-align: center;
+          align-items: flex-start;
+          justify-content: space-evenly;
+        }
+
         &--item {
           width: 100%;
+          // padding-left: 1rem;
+
+          @include lg-screen {
+            width: auto;
+          }
 
           &__link {
             display: block;
@@ -187,11 +407,50 @@ header {
             padding-left: 1rem;
             padding-top: 1.2rem;
             padding-bottom: 1.2rem;
+            text-transform: uppercase;
+            // position: relative;
+            // overflow: hidden;
+
+            @include lg-screen {
+              padding: 20px 0px 25px;
+              text-transform: capitalize;
+              font-size: 18px;
+              position: relative;
+            }
+
+            @include xl-screen {
+              font-size: 20px;
+              padding: 25px 0px 30px;
+            }
+
+            &::before {
+              @include lg-screen {
+                content: '';
+                position: absolute;
+                bottom: 0px;
+                right: -200px;
+                transition: all $secondary-transition;
+              }
+            }
 
             &:hover,
             &.active {
               background-color: $purple;
               color: $white;
+
+              &::before {
+                @include lg-screen {
+                  height: 5px;
+                  width: 100%;
+                  background-color: $purple;
+                  right: 0;
+                }
+              }
+
+              @include lg-screen {
+                background-color: transparent;
+                color: #151515;
+              }
             }
           }
         }
