@@ -399,7 +399,7 @@ header nav .navbar-contact__info {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: left;
-  padding: 30px;
+  padding: 20px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -478,7 +478,7 @@ header nav .navbar-contact__info a.locale {
   text-align: left;
   font-weight: 600;
   font-family: "Lora", serif;
-  line-height: 26px;
+  line-height: 24px;
   letter-spacing: 1.2px;
 }
 
@@ -583,7 +583,7 @@ header nav .navbar-links {
           align-items: center;
   text-align: left;
   width: 100%;
-  height: 25%;
+  height: auto;
 }
 
 @media only screen and (min-width: 992px) {
@@ -593,7 +593,6 @@ header nav .navbar-links {
         -ms-flex-direction: row;
             flex-direction: row;
     margin: 0 auto;
-    height: auto;
     text-align: center;
     -webkit-box-align: start;
         -ms-flex-align: start;
